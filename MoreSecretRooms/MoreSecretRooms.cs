@@ -16,12 +16,11 @@ namespace MoreSecretRooms
             eventsManager.Subscribe(ModEventType.WorldGenerated, OnWorldGenerated);
         }
 
-        private static void OnWorldGenerated(object worldObj)
+        private void OnWorldGenerated(object worldObj)
         {
             try
             {
                 Log.Message("[MoreSecretRooms] WorldGenerated event fired.");
-
                 var memory = WorldGen.CurMemory;
 
                 if (memory.config.Spec != Get.World_Standard)
@@ -43,7 +42,7 @@ namespace MoreSecretRooms
             }
         }
 
-        private static bool TryAddSideCorridorSecretRoom(WorldGenMemory memory)
+        private bool TryAddSideCorridorSecretRoom(WorldGenMemory memory)
         {
             var potentialRooms = new List<Room>();
             foreach (var room in memory.AllRooms)
@@ -77,12 +76,11 @@ namespace MoreSecretRooms
 
             foreach (var room in memory.AllRooms)
                 if (room.Shape.Overlaps(newRoomShape))
-                    return false;
-            // Obstructed location
+                    return false; // Obstructed
 
             Get.World.RetainedRoomInfo.Add(
                 newRoomShape,
-                Get.Specs.Get<RoomSpec>("MySecretRoom_Treasure"),
+                Get.Specs.Get<RoomSpec>("MoreSecretRooms_Treasure"),
                 Room.LayoutRole.Secret,
                 "A Hidden Vault"
             );
