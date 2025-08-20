@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Specs>
+	<RoomSpec>
+		<specID>MoreSecretRooms_Treasure</specID>
+		<filler Class="RoomFiller_Treasure" />
+		<allowedLayoutRoles>
+			<li>Secret</li>
+		</allowedLayoutRoles>
+	</RoomSpec>
+</Specs>

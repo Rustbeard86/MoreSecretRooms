@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ModInfo>
+	<modId>MySecretRooms</modId>
+	<name>More Secret Rooms</name>
+	<author>Rustbeard86</author>
+	<description>Adds more secret rooms to the dungeon!!</description>
+
+	<eventsHandler>MoreSecretRooms.SecretRoomEventsHandler</eventsHandler>
+
+</ModInfo>
